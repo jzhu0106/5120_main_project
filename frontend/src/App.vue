@@ -1,18 +1,29 @@
-<script setup>
-
-</script>
-
 <template>
-
-  <div>111111</div>
-<div>111111909090909</div>
-<div>test111</div>
-<div>test1190909091</div>
-
-
-
+  <div id="app">
+    <Header />
+    <Hero />
+    <BottomIcons />
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Header from './components/Header.vue'
+import Hero from './components/Hero.vue'
+import BottomIcons from './components/BottomIcons.vue'
 
+export default {
+  components: {
+    Header,
+    Hero,
+    BottomIcons
+  }
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
 </style>
