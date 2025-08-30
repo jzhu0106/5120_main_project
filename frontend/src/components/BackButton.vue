@@ -27,7 +27,7 @@ const goBack = () => {
 }
 
 .back-icon {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
 </style>
