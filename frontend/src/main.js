@@ -1,16 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-// import './assets/main.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
-
+import router from './router'
+import './assets/base.css'
+import './assets/main.css'
 
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
 
 
 const app = createApp(App);
+
+app.use(router)
 app.use(PrimeVue, {
   theme: {
     preset: Aura
@@ -18,4 +20,4 @@ app.use(PrimeVue, {
 });
 
 
-createApp(App).mount('#app')
+app.mount('#app')

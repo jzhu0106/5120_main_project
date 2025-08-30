@@ -1,11 +1,12 @@
 <template>
-  <header>
-    <div class="logo">Placeholder Title</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Guides</a>
-      <a href="#">About</a>
-      <a href="#">Help</a>
+  <header class="site-header">
+    <!-- logo link to home -->
+    <RouterLink class="brand" to="/">Placeholder Title</RouterLink> 
+    <nav class="menu">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/guides">Guides</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/help">Help</RouterLink>
     </nav>
     <div class="icons">
       <a href="#"><img src="@/assets/placeholder-icon1.png" alt="Icon 1" /></a>
