@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Guides from '../views/Guides.vue'
+import DigitalTips from '../views/DigitalTips.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/guides', name: 'Guides', component: Guides },
-  // example child pages the big buttons could link to:
-  { path: '/guides/digital-tips', component: { template: '<div class="page">Digital Tips Page</div>' }},
+  
+  // Digital tips. Overlay if on guides, direct takes to new page
+  { path: '/guides/digital-tips', name: 'DigitalTipsOverlay', component: DigitalTips, props: { overlay: true } },
+  { path: '/guides/digital-tips/full', name: 'DigitalTipsFull', component: DigitalTips, props: { overlay: false } },
+
+  // Child Pages
   { path: '/guides/learn-stay-safe', component: { template: '<div class="page">Learn / Stay Safe Page</div>' }},
   { path: '/guides/tutorial', component: { template: '<div class="page">Tutorial Page</div>' }},
   { path: '/guides/quiz-game', component: { template: '<div class="page">Quiz Game Page</div>' }},

@@ -156,3 +156,53 @@ a,
   border-radius:18px;
   box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
+
+/* MODAL STYLES FOR OVERLAYS */
+.modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 100; /* sits above everything else */
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 100;
+}
+
+/* Panel that displays the overlay content */
+.modal-panel {
+  position: absolute;
+  inset: 4% 6%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  padding: 24px;
+  overflow: auto;
+  max-height: 92vh;
+
+  z-index: 101;
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute; top: 10px; right: 12px;
+  border: 0; background: transparent; font-size: 28px; cursor: pointer;
+  z-index: 102;
+}
+.modal-close:hover {
+  color: #000;
+}
+
+/* Optional animations for polish */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

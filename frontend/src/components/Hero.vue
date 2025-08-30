@@ -3,7 +3,9 @@
     <div class="hero-text">
       <h1>Welcome to <br /> Placeholder Title</h1>
       <p>Simple, safe, and supportive online experiences for everyone.</p>
-      <button class="btn-primary">Get Started</button>
+      <router-link to="/guides">
+        <button class="btn-primary">Get Started</button>
+      </router-link>
     </div>
     <div class="hero-image">
       <span>Insert image here</span>
