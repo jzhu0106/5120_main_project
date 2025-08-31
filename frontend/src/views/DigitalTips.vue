@@ -3,11 +3,19 @@
   <div v-if="overlay" class="modal-root" @keydown.esc="onClose" tabindex="-1">
     <div class="modal-backdrop" @click="onClose" />
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="tipsTitle">
-      <button class="modal-close" @click="onClose" aria-label="Close">×</button>
-
+        <!-- Header Bar -->
+      <div class="modal-header">
+      <button class="back-button" @click="onClose" aria-label="Go back">
+        <img :src="backIcon" alt="Back" />
+        <span>Back</span>
+      </button>
       <h2 id="tipsTitle" class="modal-title">Digital Tips</h2>
+      <button class="modal-close" @click="onClose" aria-label="Close overlay">×</button>
+    </div>
+
       <p class="modal-sub">Choose a topic to explore practical, confidence-building tips.</p>
 
+      <!-- Tiles Grids -->
       <div class="tiles-grid tips-grid">
         <RouterLink v-for="t in tips" :key="t.to" class="tile tips-tile" :to="t.to">
           <div class="tile-content">
@@ -50,6 +58,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
+import backIcon from '@/assets/back-icon.png'
 
 // route prop from router/index.js
 const props = defineProps({ overlay: { type: Boolean, default: true } })
@@ -107,7 +116,7 @@ const tips = [
   },
   {
     title: 'Shopping Online',
-    desc: 'Discover how to add and remove items from your cart, view what’s inside, edit quantities, and safely proceed to checkout.',
+    desc: 'Discover how to add and remove items from your cart, view cart contents, make changes, and proceed to checkout.',
     img: img2,
     alt: 'eCommerce',
     badgeBg: '#fda4af',
@@ -128,6 +137,12 @@ const tips = [
     alt: 'Settings menu',
     badgeBg: '#ddd6fe',
     to: '/guides/digital-tips/settings'
+  },
+  {
+    title: 'Food Delivery',
+    desc: 'Bringing it all together',
+    img: img1, alt: 'Food delivery', badgeBg: '#b9fbc0',
+    to: '/guides/digital-tips/food-delivery'
   },
 ]
 </script>

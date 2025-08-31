@@ -157,7 +157,11 @@ a,
   box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
-/* MODAL STYLES FOR OVERLAYS */
+/*==================================================
+  ==================================================
+            MODAL STYLES FOR OVERLAYS 
+  ==================================================
+  ==================================================*/
 .modal-root {
   position: fixed;
   inset: 0;
@@ -168,6 +172,7 @@ a,
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
   z-index: 100;
 }
 
@@ -178,24 +183,83 @@ a,
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,.25);
-  padding: 24px;
-  overflow: auto;
-  max-height: 92vh;
+  
+  /* Header + content */
+  padding: 12px 24px 24px;
 
+  /* scroll for content grows */
+  max-height: 92vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable both-edges;
+  
   z-index: 101;
+}
+
+/* Modal Header Bar */
+.modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 102;                  
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 12px;
+  background: #fff;
+  padding: 8px 0 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* BACK BUTTON (Overlay + Page) */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(241, 245, 249, 0.85);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.back-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.back-button:hover {
+  background: rgba(226, 232, 240, 0.95);
+}
+
+/* Tital in Header */
+.modal-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* Modal Close Button */
 .modal-close {
-  position: absolute; top: 10px; right: 12px;
-  border: 0; background: transparent; font-size: 28px; cursor: pointer;
-  z-index: 102;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
 }
 .modal-close:hover {
   color: #000;
 }
 
-/* Optional animations for polish */
+/* Animations for polish */
 @keyframes modalFadeIn {
   from {
     opacity: 0;

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Guides from '../views/Guides.vue'
 import DigitalTips from '../views/DigitalTips.vue'
+import TipShell from '../views/digital-tips/TipShell.vue'
+
 import Square from '../views/Square.vue'
 import Tutorial from '../views/Tutorial.vue'
 
@@ -12,6 +14,10 @@ const routes = [
   // Digital tips. Overlay if on guides, direct takes to new page
   { path: '/guides/digital-tips', name: 'DigitalTipsOverlay', component: DigitalTips, props: { overlay: true } },
   { path: '/guides/digital-tips/full', name: 'DigitalTipsFull', component: DigitalTips, props: { overlay: false } },
+
+  // Detail pages for sub tiles under digital tips
+  { path: '/guides/digital-tips/:slug',       name: 'TipOverlay', component: TipShell, props: route => ({ overlay: true, slug: route.params.slug }) },
+  { path: '/guides/digital-tips/:slug/full',  name: 'TipFull',    component: TipShell, props: route => ({ overlay: false, slug: route.params.slug }) },
 
   // Child Pages
   { path: '/guides/learn-stay-safe', component: { template: '<div class="page">Learn / Stay Safe Page</div>' }},
