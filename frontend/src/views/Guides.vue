@@ -11,7 +11,7 @@
         :to="'/guides/digital-tips'"
         bg="#e9d5ff"
         accent="#f8c5b8"
-        :imgSrc="tipsImg"
+        :imgSrc="digitaltips"
         imgAlt="Confetti icon"
       />
 
@@ -22,7 +22,7 @@
         :to="'/guides/learn-stay-safe'"
         bg="#c7d2fe"
         accent="#a5b4fc"
-        :imgSrc="lockImg"
+        :imgSrc="safety"
         imgAlt="Padlock icon"
       />
 
@@ -33,7 +33,7 @@
         :to="'/guides/information'"
         bg="#fef08a"
         accent="#fde047"
-        :imgSrc="infoImg"
+        :imgSrc="infomation"
         imgAlt="Info icon"
       />
 
@@ -44,7 +44,7 @@
         :to="'/guides/tutorial'"
         bg="#a7f3d0"
         accent="#6ee7b7"
-        :imgSrc="peopleImg"
+        :imgSrc="tutorial"
         imgAlt="People icon"
       />
 
@@ -55,7 +55,7 @@
         :to="'/guides/quiz-game'"
         bg="#c4b5fd"
         accent="#fda4af"
-        :imgSrc="wrenchImg"
+        :imgSrc="game"
         imgAlt="Wrench icon"
       />
     </div>
@@ -66,10 +66,18 @@
 import Header from '@/components/Header.vue'
 import TileCard from '@/components/TileCard.vue'
 
-// use your own placeholders in /src/assets
+
 import tipsImg from '@/assets/placeholder-icon1.png'
 import lockImg from '@/assets/placeholder-icon2.png'
 import infoImg from '@/assets/placeholder-icon1.png'
 import peopleImg from '@/assets/placeholder-icon2.png'
 import wrenchImg from '@/assets/placeholder-icon1.png'
+import digitaltips from '@/assets/digitaltips.png'
+
+import safety from '@/assets/safety.png'
+import tutorial from '@/assets/tutorial.png'
+import infomation from '@/assets/infomation.png'
+import game from '@/assets/game.png'
+
+
 </script>
