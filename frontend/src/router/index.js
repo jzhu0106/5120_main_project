@@ -24,6 +24,7 @@ const routes = [
   // { path: '/guides/tutorial', component: { template: '<div class="page">Tutorial Page</div>' }},
 { path: '/guides/online-shopping-Tut', name: 'TutShopOnline', component: () => import('../views/TutShopOnline.vue') },
   { path: '/guides/online-shopping/registration', name: 'ShopOnlineRegister', component: () => import('../views/ShopOnlineRegister.vue') },
+    { path: '/guides/TutorialSearch', name: 'TutorialSearch', component: () => import('../views/TutorialSearch.vue') },
 
 
     { path: '/guides/tutorial', name: 'Tutorial', component: Square },

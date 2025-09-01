@@ -58,6 +58,23 @@
         :imgSrc="game"
         imgAlt="Wrench icon"
       />
+
+
+      <TileCard
+  title="Tutorial Version 2"
+  subtitle="Tutorial Version 2"
+  cta="Start Now"
+  :to="'/guides/TutorialSearch'"
+  bg="#fbbf24"
+  accent="#f59e0b"
+  :imgSrc="tutorial"
+  imgAlt="Advanced tutorial icon"
+/>
+
+
+
+
+
     </div>
   </section>
 </template>
