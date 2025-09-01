@@ -118,7 +118,7 @@ h1 {
 }
 
 .search-box {
-  background: #f8f9fa;
+  background: #c7d2fe;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -132,7 +132,9 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #c7d2fe;
 }
+
 
 .dropdown-group label {
   margin-bottom: 5px;
@@ -153,7 +155,7 @@ h1 {
 
 .button-group button {
   padding: 8px 16px;
-  background: #007bff;
+  background: #6A0DAD;
   color: white;
   border: none;
   border-radius: 5px;
