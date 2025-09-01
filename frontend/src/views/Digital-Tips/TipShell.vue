@@ -14,11 +14,12 @@
       <button class="modal-close" @click="onClose" aria-label="Close overlay">×</button>
     </div>
 
-    <p class="page-sub">Content for “{{ title }}” goes here. (Overlay view)</p>
-
-    <div class="page" style="min-height: 300px; display:flex; align-items:center; justify-content:center;">
-      <em>Placeholder area — build steps, checklists, etc.</em>
+    <component v-if="Current" :is="Current" />
+    <div v-else class="page" style="min-height: 300px; display:flex; align-items:center; justify-content:center;">
+        <em>Missing tip for “{{ title }}” (slug: {{ slug }})</em>
     </div>
+
+    
   </div>
 </div>
 
@@ -33,7 +34,9 @@
     <span style="width:34px;"></span> <!-- spacer where close would be -->
   </div>
 
-    <p>Content for “{{ title }}” goes here. (Full page)</p>
+    <component v-if="Current" :is="Current" />
+    <p v-else>Missing tip for “{{ title }}” (slug: {{ slug }})</p>
+
   </section>
 </template>
 
@@ -41,6 +44,19 @@
 import { computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import backIcon from '@/assets/back-icon.png'
+import BankingTip from './BankingTip.vue'
+import StrongPassword from './StrongPassword.vue'
+
+// Map slugs to tip components
+const registry = {
+  banking: BankingTip,
+  bankingtips: BankingTip, // alias; use either slug
+  'strong-password': StrongPassword,
+  strongpassword: StrongPassword,
+}
+
+// Resolve the current tip component from the slug
+const Current = computed(() => registry[props.slug] ?? null)
 
 const props = defineProps({
   overlay: { type: Boolean, default: true },

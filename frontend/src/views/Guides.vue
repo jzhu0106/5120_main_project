@@ -5,6 +5,17 @@
 
     <div class="tiles-grid">
       <TileCard
+        title="Tutorial"
+        subtitle="Practice your learnings in a space where mistakes mean nothing"
+        cta="Learn now"
+        :to="'/guides/tutorial'"
+        bg="#a7f3d0"
+        accent="#6ee7b7"
+        :imgSrc="tutorial"
+        imgAlt="People icon"
+      />
+      
+      <TileCard
         title="Digital Tips"
         subtitle="Build skills to confidently use healthcare, banking, and other daily services"
         cta="Get Started"
@@ -35,17 +46,6 @@
         accent="#fde047"
         :imgSrc="infomation"
         imgAlt="Info icon"
-      />
-
-      <TileCard
-        title="Tutorial"
-        subtitle="Practice your learnings in a space where mistakes mean nothing"
-        cta="Learn now"
-        :to="'/guides/tutorial'"
-        bg="#a7f3d0"
-        accent="#6ee7b7"
-        :imgSrc="tutorial"
-        imgAlt="People icon"
       />
 
       <TileCard

@@ -98,6 +98,14 @@ const tips = [
     badgeBg: '#fde68a',
     to: '/guides/digital-tips/banking'
   },
+  { 
+    title: 'Setting Strong Passwords',
+    desc: 'Tips for setting up strong passwords for your accounts',
+    img: img1,
+    alt: 'Strong Password',
+    badgeBg: '#FF5F15',
+    to: '/guides/digital-tips/strong-password'
+  },
   {
     title: 'Booking a Ride',
     desc: 'Tips for ordering rides: choosing a pickup point, setting a destination, booking in advance, and securely adding your payment details.',
