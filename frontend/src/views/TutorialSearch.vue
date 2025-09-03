@@ -35,16 +35,18 @@
       <h2>{{ tutorialTitle }}</h2>
     </div>
 
-    <div v-if="steps.length > 0" class="cards-container">
-      <div v-for="(step, index) in steps" :key="index" class="card-wrapper">
-        <TutorialCard
-          :icon="index % 2 === 0 ? tut1 : tut2"
-          :title="'Step ' + (index + 1)"
-          :description="step"
-          :bgColor="getCardColor(index)"
-        />
-      </div>
-    </div>
+    <div v-if="steps.length > 0" class="steps-grid">
+      <article v-for="(step, index) in steps" :key="index" class="step-card" :style="cardStyle(index)">
+        <div class="step-head">
+          <img
+            :src="index % 2 === 0 ? tut1 : tut2"
+            alt="icon"
+          />
+          <h3>Step {{ index + 1 }}</h3>
+        </div>
+        <p class="step-text">{{ step }}</p>
+      </article>
+</div>
   </div>
 </template>
 
@@ -64,6 +66,9 @@ const functions = ref([])
 const tutorialTitle = ref('')
 const steps = ref([])
 
+const cardStyle = (i) => ({
+  background: getCardColor(i)
+})
 const colors = ['#FFF5E1', '#EDEBFE', '#D1FAE5', '#FEF9C3', '#FEE2E2', '#DBEAFE']
 
 function loadServices() {
@@ -183,5 +188,56 @@ h1 {
 
 .card-wrapper {
   width: 100%;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .steps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .steps-grid { grid-template-columns: 1fr; }
+}
+
+.step-card {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,.06);
+  padding: 12px;
+  min-height: 150px;
+}
+
+.step-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.step-head img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.step-head h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.step-text {
+  margin: 0;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
 }
 </style>

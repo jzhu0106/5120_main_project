@@ -5,7 +5,7 @@
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="tipsTitle">
         <!-- Header Bar -->
       <div class="modal-header">
-      <button class="back-button" @click="onClose" aria-label="Go back">
+      <button class="back-button" @click="toGuides" aria-label="Go back">
         <img :src="backIcon" alt="Back" />
         <span>Back</span>
       </button>
@@ -68,6 +68,10 @@ const onClose = () => {
   // If there is history, go back; otherwise push to /guides
   if (window.history.state?.back) router.back()
   else router.push('/guides')
+}
+
+const toGuides = () => {
+  router.replace({ name: 'Guides' }) 
 }
 
 // lock body scroll while modal open

@@ -1,11 +1,12 @@
-<template>
+<!-- Commenting out this as not using. May reimplement in future -->
+<!-- <template>
   <section class="bottom-icons">
     <div class="icon">[Placeholder Icon 1]</div>
     <div class="icon">[Placeholder Icon 2]</div>
     <div class="icon">[Placeholder Icon 3]</div>
     <div class="icon">[Placeholder Icon 4]</div>
   </section>
-</template>
+</template> -->
 
 <script>
 export default {

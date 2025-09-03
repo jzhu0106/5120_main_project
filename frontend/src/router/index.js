@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Guides from '../views/Guides.vue'
 import DigitalTips from '../views/DigitalTips.vue'
-import TipShell from '../views/digital-tips/TipShell.vue'
+import TipShell from '../views/digital-tips/TipShell.vue'  // Don't delete tipshell despite the red underline. It doesn't work if its gone
+
 
 import Square from '../views/Square.vue'
 
@@ -21,14 +22,8 @@ const routes = [
 
   // Child Pages
   { path: '/guides/learn-stay-safe', component: { template: '<div class="page">Learn / Stay Safe Page</div>' }},
-  // { path: '/guides/tutorial', component: { template: '<div class="page">Tutorial Page</div>' }},
-{ path: '/guides/online-shopping-Tut', name: 'TutShopOnline', component: () => import('../views/TutShopOnline.vue') },
-  { path: '/guides/online-shopping/registration', name: 'ShopOnlineRegister', component: () => import('../views/ShopOnlineRegister.vue') },
-    { path: '/guides/TutorialSearch', name: 'Tutorialdata', component: () => import('../views/Tutorialdata.vue') },
-     { path: '/guides/Tutorialdata/TutorialSearch', name: 'TutorialSearch', component: () => import('../views/TutorialSearch.vue') },
-
-
-    { path: '/guides/tutorial', name: 'Tutorial', component: Square },
+  { path: '/guides/Tutorialdata', name: 'Tutorialdata', component: () => import('../views/Tutorialdata.vue') },
+  { path: '/guides/Tutorialdata/TutorialSearch', name: 'TutorialSearch', component: () => import('../views/TutorialSearch.vue') },
   { path: '/guides/quiz-game', component: { template: '<div class="page">Quiz Game Page</div>' }},
   { path: '/guides/information', component: { template: '<div class="page">Information Page</div>' }},
 ]

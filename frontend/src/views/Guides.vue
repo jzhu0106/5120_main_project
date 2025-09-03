@@ -4,7 +4,8 @@
     <h1 class="page-title">Guides</h1>
 
     <div class="tiles-grid">
-      <TileCard
+      <!-- Commenting out as redundant -->
+      <!-- <TileCard
         title="Tutorial"
         subtitle="Practice your learnings in a space where mistakes mean nothing"
         cta="Learn now"
@@ -13,8 +14,19 @@
         accent="#6ee7b7"
         :imgSrc="tutorial"
         imgAlt="People icon"
-      />
+      /> -->
       
+      <TileCard
+        title="Tutorial"
+        subtitle="Learn!"
+        cta="Start Now"
+        :to="'/guides/Tutorialdata'"
+        bg="#fbbf24"
+        accent="#f59e0b"
+        :imgSrc="tutorial"
+        imgAlt="Advanced tutorial icon"
+      />
+
       <TileCard
         title="Digital Tips"
         subtitle="Build skills to confidently use healthcare, banking, and other daily services"
@@ -26,7 +38,8 @@
         imgAlt="Confetti icon"
       />
 
-      <TileCard
+      <!-- Commenting out as future features -->
+      <!-- <TileCard
         title="Learn & Stay Safe"
         subtitle="Protect your personal data with simple, safe online habits"
         cta="Get Safe"
@@ -57,23 +70,7 @@
         accent="#fda4af"
         :imgSrc="game"
         imgAlt="Wrench icon"
-      />
-
-
-      <TileCard
-  title="Tutorial Version 2"
-  subtitle="Tutorial Version 2"
-  cta="Start Now"
-  :to="'/guides/TutorialSearch'"
-  bg="#fbbf24"
-  accent="#f59e0b"
-  :imgSrc="tutorial"
-  imgAlt="Advanced tutorial icon"
-/>
-
-
-
-
+      /> -->
 
     </div>
   </section>

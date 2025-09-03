@@ -1,16 +1,14 @@
 <template>
   <header class="site-header">
     <!-- logo link to home -->
-    <RouterLink class="brand" to="/">Placeholder Title</RouterLink> 
+    <RouterLink class="brand" to="/">Digital Confidence</RouterLink> 
     <nav class="menu">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/guides">Guides</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/help">Help</RouterLink>
     </nav>
     <div class="icons">
-      <a href="#"><img src="@/assets/placeholder-icon1.png" alt="Icon 1" /></a>
-      <a href="#"><img src="@/assets/placeholder-icon2.png" alt="Icon 2" /></a>
+      <a href="#"><img src="@/assets/settings.png" alt="Icon 2" /></a>
     </div>
   </header>
 </template>

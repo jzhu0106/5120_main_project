@@ -6,7 +6,7 @@
 
     <!-- Header bar -->
     <div class="modal-header">
-      <button class="back-button" @click="onClose" aria-label="Go back">
+      <button class="back-button" @click="goBack" aria-label="Go back">
         <img :src="backIcon" alt="Back" />
         <span>Back</span>
       </button>
@@ -67,13 +67,23 @@ const router = useRouter()
 
 // Close overlay or returning to digital tips list
 const onClose = () => {
-  if (window.history.state?.back) router.back()
-  else router.push('/guides/digital-tips')
+  router.replace({ name: 'Guides' })  
 }
 
 // Full-page fall back always goes back to digital tips list
 const goBack = () => {
-  router.push('/guides/digital-tips/full')
+  const current = router.currentRoute.value.name
+
+  if (current === 'DigitalTipsOverlay' || current === 'DigitalTipsFull') {
+    router.replace({ name: 'Guides' })
+    return
+  }
+
+  // Otherwise, if we’re inside a tip (overlay/full), go back to the list
+  const dest = props.overlay
+    ? { name: 'DigitalTipsOverlay' }
+    : { name: 'DigitalTipsFull' }
+  router.replace(dest)
 }
 
 

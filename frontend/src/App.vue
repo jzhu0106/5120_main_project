@@ -9,9 +9,10 @@
 
 <script>
 import Header from './components/Header.vue'
+import Hero from "./components/Hero.vue";
 
 export default {
-  components: { Header }
+  components: { Header, Hero }
 }
 </script>
 
@@ -22,7 +23,7 @@ body {
   background-color: #ffffff;
 }
 
-/* quick, minimal styling for the nav/area */
+/* quick, minimal styling for the nav area */
 .top-nav {
   display: flex;
   gap: 12px;
@@ -36,6 +37,26 @@ body {
 }
 .site-main {
   padding: 16px;
+}
+
+:root {
+  --header-height: 72px;
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex; 
 }
 
 </style>
