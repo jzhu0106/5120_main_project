@@ -122,20 +122,12 @@ const tips = [
     to: '/guides/digital-tips/email-verification-tip'
   },
   {
-    title: 'Find It in Settings',
+    title: 'Customising Settings',
     desc: 'Practice navigating to 2FA, notifications, cards, and addresses.',
     img: img_settings,
-    alt: 'Find Settings',
+    alt: 'Customising Settings',
     badge: '#E0E7FF',
-    to: '/guides/digital-tips/settings-navigator-tip'
-  },
-  {
-    title: 'Customising App Settings',
-    desc: 'Navigate app settings, review account details, adjust privacy preferences, and explore handy customisation options.',
-    img: img2,
-    alt: 'Settings menu',
-    badgeBg: '#ddd6fe',
-    to: '/guides/digital-tips/settings'
+    to: '/guides/digital-tips/customising-settings'
   },
 ]
 </script>

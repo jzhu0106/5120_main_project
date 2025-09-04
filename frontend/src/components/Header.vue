@@ -1,15 +1,27 @@
 <template>
   <header class="site-header">
-    <!-- logo link to home -->
-    <RouterLink class="brand" to="/">Digital Confidence</RouterLink> 
+    <!-- Logo links to home -->
+    <RouterLink class="brand" to="/" aria-label="Digital Confidence Home">
+      <img
+        src="@/assets/digital-confidence-logo.png"
+        alt="Digital Confidence"
+        class="logo"
+      />
+    </RouterLink>
+
     <nav class="menu">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/guides">Guides</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+<!--       Commenting out about as page not built
+      <RouterLink to="/about">About</RouterLink> -->
     </nav>
+    
+<!--     Commenting out settings icon as page not built
     <div class="icons">
-      <a href="#"><img src="@/assets/settings.png" alt="Icon 2" /></a>
-    </div>
+      <a href="#" aria-label="Settings">
+        <img src="@/assets/settings.png" alt="Settings" />
+      </a>
+    </div> -->
   </header>
 </template>
 
@@ -20,28 +32,41 @@ export default {
 </script>
 
 <style scoped>
-header {
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   background-color: #fff;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* Keep the logo nicely sized and vertically centered */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Readable, neat fit in the bar */
 .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #0077ff;
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
-nav a {
+
+.menu a {
   margin: 0 15px;
   text-decoration: none;
   color: #0077ff;
   font-weight: 500;
 }
-nav a:hover {
+.menu a:hover {
   text-decoration: underline;
 }
+
+/* Icons */
 .icons {
   display: flex;
   gap: 15px;
@@ -50,5 +75,9 @@ nav a:hover {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .logo { height: 36px; }
 }
 </style>

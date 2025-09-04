@@ -56,7 +56,7 @@ const registry = {
   strongpassword: StrongPassword,
   'email-verification-tip': EmailVerificationTip,
   EmailVerificationTip: EmailVerificationTip,
-  'settings-navigator-tip': SettingsNavigatorTip,
+  'customising-settings': SettingsNavigatorTip,
   SettingsNavigatorTip: SettingsNavigatorTip,
 }
 
