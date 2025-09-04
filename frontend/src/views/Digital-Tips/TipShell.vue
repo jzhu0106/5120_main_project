@@ -31,7 +31,7 @@
       <span>Back</span>
     </button>
     <h1 class="modal-title" style="font-size:28px;">{{ title }}</h1>
-    <span style="width:34px;"></span> <!-- spacer where close would be -->
+    <span style="width:34px;"></span>
   </div>
 
     <component v-if="Current" :is="Current" />
@@ -46,13 +46,18 @@ import { useRouter } from 'vue-router'
 import backIcon from '@/assets/back-icon.png'
 import BankingTip from './BankingTip.vue'
 import StrongPassword from './StrongPassword.vue'
+import EmailVerificationTip from './EmailVerificationTip.vue'
+import SettingsNavigatorTip from './SettingsNavigatorTip.vue'
 
 // Map slugs to tip components
 const registry = {
-  banking: BankingTip,
-  bankingtips: BankingTip, // alias; use either slug
+  // banking: BankingTip, 
   'strong-password': StrongPassword,
   strongpassword: StrongPassword,
+  'email-verification-tip': EmailVerificationTip,
+  EmailVerificationTip: EmailVerificationTip,
+  'settings-navigator-tip': SettingsNavigatorTip,
+  SettingsNavigatorTip: SettingsNavigatorTip,
 }
 
 // Resolve the current tip component from the slug
@@ -70,7 +75,7 @@ const onClose = () => {
   router.replace({ name: 'Guides' })  
 }
 
-// Full-page fall back always goes back to digital tips list
+// Back button on overlay
 const goBack = () => {
   const current = router.currentRoute.value.name
 

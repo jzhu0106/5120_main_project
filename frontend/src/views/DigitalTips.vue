@@ -92,55 +92,42 @@ onBeforeUnmount(() => {
 // Images to be used for tiles to be imported here
 import img1 from '@/assets/placeholder-icon1.png'
 import img2 from '@/assets/placeholder-icon2.png'
+import img_password from '@/assets/lock.png'
+import img_mail from '@/assets/mail.png'
+import img_settings from '@/assets/settings.png'
 
 const tips = [
-  {
-    title: 'Banking Basics',
-    desc: 'Learn how to check your balance, transfer money between accounts, and make secure payments like direct transfers and BPAY.',
-    img: img1,
-    alt: 'Banking',
-    badgeBg: '#fde68a',
-    to: '/guides/digital-tips/banking'
-  },
+  // {
+  //   title: 'Banking Basics',
+  //   desc: 'Learn how to check your balance, transfer money between accounts, and make secure payments like direct transfers and BPAY.',
+  //   img: img1,
+  //   alt: 'Banking',
+  //   badgeBg: '#fde68a',
+  //   to: '/guides/digital-tips/banking'
+  // }, commenting out as this page not working / functioning as i'd like
   { 
     title: 'Setting Strong Passwords',
     desc: 'Tips for setting up strong passwords for your accounts',
-    img: img1,
+    img: img_password,
     alt: 'Strong Password',
     badgeBg: '#FF5F15',
     to: '/guides/digital-tips/strong-password'
   },
   {
-    title: 'Booking a Ride',
-    desc: 'Tips for ordering rides: choosing a pickup point, setting a destination, booking in advance, and securely adding your payment details.',
-    img: img2,
-    alt: 'Ridesharing',
-    badgeBg: '#c7d2fe',
-    to: '/guides/digital-tips/ridesharing'
+    title: 'Find a Verification Email',
+    desc: 'Practice searching Inbox/Spam and using Resend to get a code.',
+    img: img_mail,
+    alt: 'Verify Email',
+    badge: '#C7F9CC',
+    to: '/guides/digital-tips/email-verification-tip'
   },
   {
-    title: 'Creating Online Accounts',
-    desc: 'Understand common steps when signing up: entering your email, setting secure passwords, completing required fields, and verifying accounts.',
-    img: img1,
-    alt: 'Account creation',
-    badgeBg: '#a7f3d0',
-    to: '/guides/digital-tips/account-creation'
-  },
-  {
-    title: 'Shopping Online',
-    desc: 'Discover how to add and remove items from your cart, view cart contents, make changes, and proceed to checkout.',
-    img: img2,
-    alt: 'eCommerce',
-    badgeBg: '#fda4af',
-    to: '/guides/digital-tips/ecommerce'
-  },
-  {
-    title: 'Managing Health Appointments',
-    desc: 'Learn how to book appointments online — whether for in-person visits or new telehealth consultations — with tips on entering key details.',
-    img: img1,
-    alt: 'Health services',
-    badgeBg: '#fef08a',
-    to: '/guides/digital-tips/health'
+    title: 'Find It in Settings',
+    desc: 'Practice navigating to 2FA, notifications, cards, and addresses.',
+    img: img_settings,
+    alt: 'Find Settings',
+    badge: '#E0E7FF',
+    to: '/guides/digital-tips/settings-navigator-tip'
   },
   {
     title: 'Customising App Settings',
@@ -149,12 +136,6 @@ const tips = [
     alt: 'Settings menu',
     badgeBg: '#ddd6fe',
     to: '/guides/digital-tips/settings'
-  },
-  {
-    title: 'Food Delivery',
-    desc: 'Bringing it all together',
-    img: img1, alt: 'Food delivery', badgeBg: '#b9fbc0',
-    to: '/guides/digital-tips/food-delivery'
   },
 ]
 </script>
